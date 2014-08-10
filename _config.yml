@@ -6,15 +6,15 @@ pygments:         true
 permalink:        pretty
 
 # Setup
-title:            Poole
-tagline:          The Jekyll Butler
-url:              http://getpoole.com
+title:            The Sapzil
+tagline:          Ditto Kim's Dev Log
+url:              https://dittos.github.io
 paginate:         1
 baseurl:          /
 author:
-  name:           Mark Otto
-  url:            https://twitter.com/mdo
-  email:          markdotto@gmail.com
+  name:           Ditto Kim
+  url:            https://twitter.com/__ditto
+  email:          dittos@gmail.com
 
 # Custom vars
 version:          1.0.0
