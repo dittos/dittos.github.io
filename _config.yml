@@ -10,7 +10,7 @@ title:            The Sapzil
 tagline:          Ditto Kim's Dev Log
 url:              https://dittos.github.io
 paginate:         1
-#baseurl:          /
+baseurl:          https://dittos.github.io
 author:
   name:           Ditto Kim
   url:            https://twitter.com/__ditto
