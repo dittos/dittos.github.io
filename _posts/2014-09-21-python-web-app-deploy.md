@@ -64,6 +64,7 @@ CDN을 사용할 경우 S3와 같은 스토리지 서비스에 파일을 올릴�
 * 배포 자동화: [Fabric](http://www.fabfile.org/)으로 원격 배포를 자동화합니다.
 * 서버 설정 자동화: Chef, Puppet이나 [Ansible](http://www.ansible.com) 등을 사용해서 서버 세팅 과정을 형상 관리/자동화합니다.
 * 성능 모니터링: [New Relic](http://newrelic.com/)이 굉장히 좋지만, 가격이 만만치 않아서 아직 적절한 대안을 찾지 못했습니다.
+* 서버 접속 권한과 민감한 정보 관리
 * 업로드 된 파일 관리
 * 데이터베이스 / 메모리 캐시
 * 백그라운드 워커 ([Celery](http://www.celeryproject.org/)) / 메시지 큐
