@@ -62,7 +62,7 @@ React 라이브러리 파일을 불러오고, 마크업을 React에서 사용하
     <script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
     <script type="text/jsx">
     /** @jsx React.DOM */
-    React.renderComponent(
+    React.render(
         <div className="app">
             <div className="new-status">
                 <h2>New monolog</h2>
@@ -96,7 +96,7 @@ JSX는 HTML과 비슷하긴 하지만 약간 다릅니다. 다소 헷갈릴 수�
 * 일부 속성의 이름이 다릅니다: `class`가 `className`으로 바뀌었습니다. ([전체 목록](http://facebook.github.io/react/docs/tags-and-attributes.html#supported-attributes))
 * 최상위 노드가 필요합니다: 따라서 `<div className="app">`으로 한번 감쌌습니다.
 
-`React.renderComponent` 함수는 첫번째 인자로 받은 JSX 코드를 두번째 인자의 DOM 노드에 출력해줍니다. 여기서는 `document.body`, 즉 `<body>` 태그에 마크업을 출력했습니다.
+`React.render` 함수는 첫번째 인자로 받은 JSX 코드를 두번째 인자의 DOM 노드에 출력해줍니다. 여기서는 `document.body`, 즉 `<body>` 태그에 마크업을 출력했습니다.
 
 
 ## 컴포넌트
@@ -128,7 +128,7 @@ var App = React.createClass({
     }
 });
 
-React.renderComponent(<App />, document.body);
+React.render(<App />, document.body);
 
 $(document).ready(function() {
     // 아까 코드 그대로
