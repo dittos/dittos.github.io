@@ -3,6 +3,8 @@ layout: post
 title: jQuery to React
 ---
 
+*업데이트: React 0.13에 맞춰 수정했습니다. (2015년 5월 14일)*
+
 [React](http://facebook.github.io/react/)는 Facebook에서 만든 자바스크립트 UI 라이브러리입니다. 간단한 jQuery 코드를 React 앱으로 조금씩 바꿔가면서 React에 대한 이해를 돕는 것이 이 글의 목표입니다. 맛보기 정도로 생각해 주시기 바랍니다. [Step by step from jQuery to Backbone](http://open.bekk.no/from-jquery-to-backbone)에서 아이디어를 차용했습니다.
 
 시작하기에 앞서 예제로 사용할 마크업 및 jQuery 코드를 살펴봅시다.
@@ -58,11 +60,10 @@ React 라이브러리 파일을 불러오고, 마크업을 React에서 사용하
 ```html
 <body>
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="http://fb.me/react-0.11.1.js"></script>
-    <script src="http://fb.me/JSXTransformer-0.11.1.js"></script>
+    <script src="http://fb.me/react-0.13.3.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.13.3.js"></script>
     <script type="text/jsx">
-    /** @jsx React.DOM */
-    React.renderComponent(
+    React.render(
         <div className="app">
             <div className="new-status">
                 <h2>New monolog</h2>
@@ -86,17 +87,17 @@ React 라이브러리 파일을 불러오고, 마크업을 React에서 사용하
 </body>
 ```
 
-JSX를 사용하면 자바스크립트 코드와 HTML 코드를 섞을 수 있게 됩니다. JSX 코드는 자바스크립트 코드로 변환됩니다. 예를 들어 `<a href="http://example.com/"><b>Link</b></a>`는 `React.DOM.a({href: "http://example.com/"}, React.DOM.b(null, "Link"))`로 바뀝니다.
+JSX를 사용하면 자바스크립트 코드와 HTML 코드를 섞을 수 있게 됩니다. JSX 코드는 자바스크립트 코드로 변환됩니다. 예를 들어 `<a href="http://example.com/"><b>Link</b></a>`는 `React.createElement('a', {href: "http://example.com/"}, React.createElement('b', null, "Link"))`로 바뀝니다.
 
-React와 함께 포함시킨 JSXTransformer가 이러한 변환 작업을 해줍니다. 자동으로 `type="text/jsx"`인 `<script>` 태그를 찾아서 맨 위에 `/** @jsx React.DOM */`가 있으면 자바스크립트 코드로 컴파일됩니다.
+React와 함께 포함시킨 JSXTransformer가 이러한 변환 작업을 해줍니다. 자동으로 `type="text/jsx"`인 `<script>` 태그를 찾아서 자바스크립트 코드로 컴파일됩니다.
 
 JSX는 HTML과 비슷하긴 하지만 약간 다릅니다. 다소 헷갈릴 수도 있지만 몇가지 사항만 주의하면 됩니다. 처음의 HTML 마크업과 달라진 부분을 살펴봅시다.
 
 * 한번 열린 태그는 반드시 닫아야 합니다: `<br>`과 `<input>`이 `<br />`, `<input />`으로 바뀌었습니다.
-* 일부 속성의 이름이 다릅니다: `class`가 `className`으로 바뀌었습니다. ([전체 목록](http://facebook.github.io/react/docs/tags-and-attributes.html#supported-attributes))
+* 일부 속성의 이름이 다릅니다: `class`가 `className`으로 바뀌었습니다. ([전체 목록](http://reactkr.github.io/react/docs/tags-and-attributes-ko-KR.html))
 * 최상위 노드가 필요합니다: 따라서 `<div className="app">`으로 한번 감쌌습니다.
 
-`React.renderComponent` 함수는 첫번째 인자로 받은 JSX 코드를 두번째 인자의 DOM 노드에 출력해줍니다. 여기서는 `document.body`, 즉 `<body>` 태그에 마크업을 출력했습니다.
+`React.render` 함수는 첫번째 인자로 받은 JSX 코드를 두번째 인자의 DOM 노드에 출력해줍니다. 여기서는 `document.body`, 즉 `<body>` 태그에 마크업을 출력했습니다.
 
 
 ## 컴포넌트
@@ -128,7 +129,7 @@ var App = React.createClass({
     }
 });
 
-React.renderComponent(<App />, document.body);
+React.render(<App />, document.body);
 
 $(document).ready(function() {
     // 아까 코드 그대로
@@ -233,7 +234,7 @@ var NewStatus = React.createClass({
     handleSubmit: function(e) {
         e.preventDefault();
 
-+       var $text = $(this.refs.text.getDOMNode());
++       var $text = $(React.findDOMNode(this.refs.text));
         $.ajax({
             url: '/status',
             type: 'POST',
@@ -250,7 +251,7 @@ var NewStatus = React.createClass({
 });
 ```
 
-`getDOMNode` 함수는 왜 필요한 것일까요? 사실은 `<textarea>` 같은 HTML 태그도 React 컴포넌트이기 때문입니다. 따라서 컴포넌트가 실제로 사용하는 DOM 노드에 접근하기 위해 별도의 메소드를 호출해야 합니다.
+`React.findDOMNode` 함수는 왜 필요한 것일까요? 사실은 `<textarea>` 같은 JSX 태그도 React 컴포넌트이기 때문입니다. 따라서 컴포넌트가 실제로 사용하는 DOM 노드에 접근하기 위해 별도의 함수를 호출해야 합니다.
 
 
 ## 컴포넌트 간 통신
@@ -266,7 +267,7 @@ var NewStatus = React.createClass({
         e.preventDefault();
 
 +       var self = this;
-        var $text = $(this.refs.text.getDOMNode());
+        var $text = $(React.findDOMNode(this.refs.text));
         $.ajax({
             url: '/status',
             type: 'POST',
@@ -295,7 +296,7 @@ var App = React.createClass({
 -   }
 +   },
 +   handleCreate: function(data) {
-+       $(this.refs.items.getDOMNode()).append('<li>' + data.text + '</li>');
++       $(React.findDOMNode(this.refs.items)).append('<li>' + data.text + '</li>');
 +   }
 });
 ```
@@ -327,7 +328,7 @@ var App = React.createClass({
         </div>;
     },
     handleCreate: function(data) {
--       $(this.refs.items.getDOMNode()).append('<li>' + data.text + '</li>');
+-       $(React.findDOMNode(this.refs.items)).append('<li>' + data.text + '</li>');
 +       this.setState({
 +           items: this.state.items.concat(<li>{data.text}</li>)
 +       });
@@ -389,4 +390,6 @@ var App = React.createClass({
 설명을 위해 단순한 예제를 사용했기 때문에 React 코드가 원래 코드보다 어려워 보일 수도 있습니다. 그러나 조금 더 복잡한 애플리케이션을 만든다면 React를 사용할 때 훨씬 관리하기 쉬운 코드를 작성할 수 있습니다.
 
 또한 다양한 개념을 다루려고 굳이 거쳐갈 필요 없는 과정을 일부러 넣거나 복잡한 설명을 생략한 부분이 있습니다. React를 제대로 공부하시려면 [공식 사이트의 문서](http://facebook.github.io/react/docs/getting-started.html)를 읽으시길 바랍니다.
+
+2015-05-14 추가: React 한국 커뮤니티에서 번역한 [한국어 문서](http://reactkr.github.io/react/docs/getting-started-ko-KR.html)도 있습니다.
 
