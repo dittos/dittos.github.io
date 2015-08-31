@@ -147,6 +147,13 @@ abbr[title] {
   border-bottom: 1px dotted #e5e5e5;
 }
 
+em {
+  font-style: normal;
+  background-color: #def;
+  padding: .1rem .2rem;
+  border-radius: .2rem;
+}
+
 /* Code */
 code,
 pre {
