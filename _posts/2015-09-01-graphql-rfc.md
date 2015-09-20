@@ -9,7 +9,7 @@ title: "GraphQL 살펴보기"
 
 그러나 이 기술들이 공개된 지 2달도 채 지나지 않았기 때문에, 아직 진지하게 쓰기에는 생태계가 전반적으로 미숙한 상황으로 보입니다.
 
-현재 성숙한 GraphQL 구현이 레퍼런스 구현인 [graphql-js](https://github.com/graphql/graphql-js) 뿐이어서 당장 GraphQL을 지원하는 서버를 작성하기가 쉽지 않습니다. 그래서 GraphQL의 파이썬 구현인 [graphql-py](https://github.com/dittos/graphql-py)를 만들고 있지만 진도가 더딘 편입니다. 처음에 graphql-js를 포팅하며 시작했는데, graphql-js의 API가 자주 바뀌어 따라가지 못하는 상황입니다.
+현재 성숙한 GraphQL 구현이 레퍼런스 구현인 [graphql-js](https://github.com/graphql/graphql-js) 뿐이어서 당장 GraphQL을 지원하는 서버를 작성하기가 쉽지 않습니다. 그래서 GraphQL의 파이썬 구현인 [graphqllib](https://github.com/dittos/graphqllib)를 만들고 있지만 진도가 더딘 편입니다. 처음에 graphql-js를 포팅하며 시작했는데, graphql-js의 API가 자주 바뀌어 따라가지 못하는 상황입니다.
 
 또한 웹이 아닌 환경을 위한 GraphQL 클라이언트 구현이 아직 존재하지 않아서, 그 쪽도 연구가 필요해 보입니다. 페이스북에서 좀 더 여러가지 라이브러리를 공개해주면 해결되리라 생각합니다. (얼마 전에 C++ 파서 구현인 [libgraphqlparser](https://github.com/graphql/libgraphqlparser)도 공개되었습니다.)
 
