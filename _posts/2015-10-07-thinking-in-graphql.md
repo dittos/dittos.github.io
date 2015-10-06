@@ -31,7 +31,7 @@ rest.get('/stories').then(stories =>
 이렇게 하면 서버에 *n+1개*의 요청을 보내야 합니다. 리스트를 가져올 때 1번, 각 항목을 가져올 때 *n번*. GraphQL에서는 같은 데이터를 단 하나의 네트워크 요청으로 가져올 수 있습니다. (별도의 엔드포인트를 만들지 않고 가능합니다. 만약 만든다면 계속 관리해야겠지요)
 
 ```javascript
-graphql.get(`query { stories { id, text } }`).then(
+graphql.get('query { stories { id, text } }').then(
   stories => {
     // 스토리의 목록
     // `[ { id: "...", text: "..." } ]`
