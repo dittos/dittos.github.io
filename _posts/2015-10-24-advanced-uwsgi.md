@@ -3,7 +3,9 @@ layout: post
 title: "uWSGI의 고급 기능들"
 ---
 
-그동안은 파이썬 애플리케이션을 배포할 때 설정이 쉽다는 이유로 [gunicorn](http://gunicorn.org/)을 주로 사용했다. ([예전에 올린 관련 글](http://dittos.github.io/2014/09/21/python-web-app-deploy/)) 이번에 우연히 uWSGI의 여러가지 기능에 대해 알게 되었는데, 호기심이 생겨 문서를 읽으면서 이것저것 적용해보았다. [공식 문서](http://uwsgi-docs.readthedocs.org/)가 잘 쓰여있긴 하지만 워낙 기능이 방대해서 유용할만한 기능을 정리해본다.
+그동안은 파이썬 애플리케이션을 배포할 때 설정이 쉽다는 이유로 [gunicorn](http://gunicorn.org/)을 주로 사용했다. ([예전에 올린 관련 글](http://dittos.github.io/2014/09/21/python-web-app-deploy/)) 이번에 우연히 [uWSGI](http://uwsgi-docs.readthedocs.org/)의 여러가지 기능에 대해 알게 되었는데, 호기심이 생겨 문서를 읽으면서 이것저것 적용해보았다. [공식 문서](http://uwsgi-docs.readthedocs.org/)가 잘 쓰여있긴 하지만 워낙 기능이 방대해서 유용할만한 기능을 정리해본다.
+
+혹시 uWSGI의 기본적인 설정 방법을 알고 싶다면 [haruair님의 블로그 글](http://haruair.com/blog/1900)을 추천한다.
 
 
 ## 설정 파일 변수 (placeholder)
