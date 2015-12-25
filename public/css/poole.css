@@ -49,17 +49,17 @@ body {
 
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.8;
 }
 @media (min-width: 38em) {
   html {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 
 body {
-  color: #515151;
+  color: #444;
   background-color: #fff;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
@@ -81,7 +81,7 @@ a:focus {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  margin-bottom: .5rem;
+  margin-bottom: 1rem;
   font-weight: bold;
   line-height: 1.25;
   color: #313131;
@@ -91,7 +91,7 @@ h1 {
   font-size: 2rem;
 }
 h2 {
-  margin-top: 1rem;
+  margin-top: 2rem;
   font-size: 1.5rem;
 }
 h3 {
