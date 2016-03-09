@@ -1,22 +1,37 @@
 # Dependencies
 markdown:         kramdown
-pygments:         true
+highlighter:      rouge
 
 # Permalinks
-permalink:        pretty
+permalink:           pretty
 
 # Setup
 title:            The Sapzil
 tagline:          Ditto Kim's Dev Log
 url:              https://dittos.github.io
 paginate:         1
-baseurl:          https://dittos.github.io/
+baseurl:          ""
+analytics_id:     UA-7500828-6
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
 author:
   name:           Ditto Kim
   url:            https://twitter.com/__ditto
   email:          dittos@gmail.com
 
 # Custom vars
-version:          1.0.0
+version:             2.0.0
 github:
-  repo:           https://github.com/poole/poole
+  repo:              https://github.com/poole/poole
+
+# Gems
+gems:
+  - jekyll-paginate
+  - jekyll-gist
