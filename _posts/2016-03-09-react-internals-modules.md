@@ -3,6 +3,8 @@ layout: post
 title: "React 소스 코드 읽기 - 모듈 시스템"
 ---
 
+{% include toc-react-internals.md %}
+
 [React 소스 코드](https://github.com/facebook/react)는 조금 특이한 모듈 시스템을 사용해서 사전 지식이 없으면 구조를 파악하기가 힘듭니다.
 
 대부분의 소스 코드는 [src/](https://github.com/facebook/react/tree/v15.0.0-rc.1/src)에 들어있습니다. 파일들을 열어보면 CommonJS처럼 `require` 함수로 모듈을 불러오고 `module.exports`에 넣은 값이 외부에 공개되는 것을 알 수 있습니다. 그런데 `require`할 때의 모듈 경로가 디렉토리를 뺀 모듈명만으로 되어있습니다. 예를 들어 [src/React.js](https://github.com/facebook/react/blob/v15.0.0-rc.1/src/React.js)에서 `require('ReactDOM')`를 하는데 실제 이 모듈은 `src/renderers/dom/ReactDOM.js`에 있습니다.
