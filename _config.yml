@@ -12,6 +12,7 @@ url:              https://dittos.github.io
 paginate:         1
 baseurl:          ""
 analytics_id:     UA-7500828-6
+future:           true
 
 # Assets
 #
