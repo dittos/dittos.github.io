@@ -6,6 +6,7 @@
 code,
 pre {
   font-family: $code-font-family;
+  word-wrap: break-all;
 }
 
 code {
@@ -34,10 +35,11 @@ pre code {
 .highlight {
   padding: 1rem;
   margin-bottom: 1rem;
-  font-size: .8rem;
+  //font-size: .8rem;
   line-height: 1.4;
   background-color: #f9f9f9;
   border-radius: .25rem;
+  white-space: pre-wrap;
 
   pre {
     margin-bottom: 0;
