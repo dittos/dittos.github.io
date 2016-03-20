@@ -132,6 +132,6 @@ console.log(inst === inst2); // true
 
 같은 컴포넌트가 연쇄적으로 여러번 업데이트될 때, 마지막 한번만 실제로 렌더링을 할 수 있다면 효율적일 것입니다. React는 기본적으로 업데이트를 배치로 묶어서 처리합니다.
 
-렌더링 작업은 기본적으로 [ReactUpdates.batchedUpdates](https://github.com/facebook/react/blob/v15.0.0-rc.2/src/renderers/shared/reconciler/ReactUpdates.js#L110-L113) 함수를 통해 실행됩니다. `setState` 같은 메소드는 바로 렌더링을 발생시키지 않고 업데이트 큐에만 추가합니다. ([ReactUpdates.enqueueUpdate](https://github.com/facebook/react/blob/v15.0.0-rc.2/src/renderers/shared/reconciler/ReactUpdates.js#L214-L233)) `setState`를 호출하더라도 변경된 상태를 바로 `this.state`로 읽을 수 없는 이유입니다. 배치가 끝나면, 쌓여있던 업데이트가 한번에 처리됩니다. ([ReactUpdates.flushUpdate](https://github.com/facebook/react/blob/v15.0.0-rc.2/src/renderers/shared/reconciler/ReactUpdates.js#L187-L212))
+렌더링 작업은 기본적으로 [ReactUpdates.batchedUpdates](https://github.com/facebook/react/blob/v15.0.0-rc.2/src/renderers/shared/reconciler/ReactUpdates.js#L110-L113) 함수를 통해 실행됩니다. `setState` 같은 메소드는 바로 렌더링을 발생시키지 않고 업데이트 큐에만 추가합니다. ([ReactUpdates.enqueueUpdate](https://github.com/facebook/react/blob/v15.0.0-rc.2/src/renderers/shared/reconciler/ReactUpdates.js#L214-L233)) `setState`를 호출하더라도 변경된 상태를 바로 `this.state`로 읽을 수 없는 이유입니다. 배치가 끝나면, 쌓여있던 업데이트가 한번에 처리됩니다. ([ReactUpdates.flushBatchedUpdates](https://github.com/facebook/react/blob/v15.0.0-rc.2/src/renderers/shared/reconciler/ReactUpdates.js#L187-L212))
 
 배치 전략은 주입되는 의존성이며 기본 배치 전략은 [ReactDefaultBatchingStrategy](https://github.com/facebook/react/blob/v15.0.0-rc.2/src/renderers/shared/reconciler/ReactDefaultBatchingStrategy.js)에 구현되어 있습니다.
