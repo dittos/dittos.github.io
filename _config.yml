@@ -8,7 +8,7 @@ permalink:           pretty
 # Setup
 title:            The Sapzil
 tagline:          Ditto Kim's Dev Log
-url:              https://dittos.github.io
+url:              http://blog.sapzil.org
 paginate:         1
 baseurl:          ""
 analytics_id:     UA-7500828-6
@@ -24,7 +24,7 @@ sass:
 # About/contact
 author:
   name:           Ditto Kim
-  url:            https://twitter.com/__ditto
+  url:            https://twitter.com/needkoolquality
   email:          dittos@gmail.com
 
 # Custom vars
