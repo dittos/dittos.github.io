@@ -54,6 +54,14 @@ img {
   border-radius: 5px;
 }
 
+figure {
+  text-align: center;
+}
+
+figcaption {
+  color: $gray-3;
+}
+
 table {
   margin-bottom: 1rem;
   width: 100%;
