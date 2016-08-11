@@ -6,9 +6,11 @@
   padding-top:    1rem;
   padding-bottom: 1rem;
   margin-bottom: 3rem;
+  overflow: hidden;
 }
 
 .masthead-title {
+  float: left;
   margin-top: 0;
   margin-bottom: 0;
   color: $gray-4;
@@ -22,4 +24,9 @@
     font-weight: 400;
     opacity: .5;
   }
+}
+
+.masthead-nav {
+  float: right;
+  font-size: 90%;
 }

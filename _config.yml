@@ -9,7 +9,7 @@ permalink:           pretty
 title:            The Sapzil
 tagline:          Ditto Kim's Dev Log
 url:              http://blog.sapzil.org
-paginate:         1
+paginate:         10
 baseurl:          ""
 analytics_id:     UA-7500828-6
 future:           true
