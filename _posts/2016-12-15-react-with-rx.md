@@ -17,7 +17,7 @@ npm의 [rxjs](https://www.npmjs.com/package/rxjs) 패키지를 설치하면 됩�
 
 RxJS에는 DOM 노드의 이벤트를 직접 구독할 수 있는 기능이 제공되지만 여기서는 직접 React의 이벤트를 Observable로 바꿔보겠습니다.
 
-[Subject](http://reactivex.io/rxjs/manual/overview.html#subject)를 만들고 입력 내용이 바뀔 때마다 `next` 메소드를 호출하여 Observer에 보냅니다.
+[Subject](http://reactivex.io/rxjs/class/es6/Subject.js~Subject.html)를 만들고 입력 내용이 바뀔 때마다 `next` 메소드를 호출하여 Observer에 보냅니다.
 
 Subject는 Observable이기도 하므로 구독해서 state를 업데이트 해봅니다. 여기까지는 기본적으로 EventEmitter와 다를 것이 없습니다.
 
@@ -80,7 +80,7 @@ class EventsExample extends React.Component {
 
 먼저 검색어가 props에서 들어오므로 이를 Observable로 만들 것입니다.
 
-위에서와 마찬가지로 Subject를 사용하여 `componentWillReceiveProps` 라이프사이클 메소드가 불릴 때마다 새 props를 전파합니다. 초기값을 나타내기 위해 [BehaviorSubject](http://reactivex.io/rxjs/manual/overview.html#behaviorsubject)를 사용했습니다.
+위에서와 마찬가지로 Subject를 사용하여 `componentWillReceiveProps` 라이프사이클 메소드가 불릴 때마다 새 props를 전파합니다. 초기값을 나타내기 위해 [BehaviorSubject](http://reactivex.io/rxjs/class/es6/BehaviorSubject.js~BehaviorSubject.html)를 사용했습니다.
 
 그리고 `map` 연산자로 `props`에서 `query` 프로퍼티만을 취했습니다.
 
@@ -119,11 +119,11 @@ RxJS의 AjaxObservable로 GitHub API를 호출해보겠습니다. RxJS 5가 나�
 ```js
 // 주의: subscribe를 할 때마다 요청을 전송함
 Rx.Observable.ajax.get('https://api.github.com/search/users?q=dittos')
-    .map(r => r.response.items);
+    .map(r => r.response.items)
     .subscribe(data => console.log(data));
 ```
 
-이제 `query`가 바뀔 때마다 요청을 보내려면 각 `query$`를 [mergeMap](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-mergeMap)으로 AjaxObservable로 바꿔줍니다. (이전에는 `flatMap`으로 불리던 연산자입니다.)
+이제 `query`가 바뀔 때마다 요청을 보내려면 각 `query`를 [mergeMap](http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html#instance-method-mergeMap)하여 AjaxObservable로 바꿔줍니다. (`flatMap`으로 불리기도 하는 연산자입니다.)
 
 ```js
 class SearchExample extends React.Component {
@@ -148,7 +148,7 @@ class SearchExample extends React.Component {
 위에서 나열한 요구사항을 만족하기 위해 Rx 연산자를 추가해보겠습니다.
 
 * **이전 요청의 응답이 새 요청의 응답보다 늦게 도착하면 무시해야 합니다**
-  `mergeMap`은 요청이 들어간 순서를 따지지 않고 응답이 도착하는 대로 뿜어냅니다. `switchMap`으로 변경해서 이전 요청을 취소하도록 만들 수 있습니다.
+  `mergeMap`은 요청이 들어간 순서를 따지지 않고 응답이 도착하는 대로 뿜어냅니다. `switchMap`으로 변경해서 이전 요청을 취소하도록 만들 수 있습니다. (`switchMap`은 `flatMapLatest`로 불리기도 합니다.)
 * **요청이 실패하면 다시 요청을 보내봅니다**
   `retry`를 적용하면 Observable이 실패 상태로 끝났을 때 다시 Observable을 구독할 수 있습니다.
 * **재시도 중에도 다른 검색어가 props로 들어오면 재시도를 중단합니다.**
