@@ -133,7 +133,7 @@ class SearchExample extends React.Component {
         const query$ = this.props$.map(props => props.query);
         const result$ = query$.mergeMap(query => {
             if (query === '')
-                return Rx.Observable.just(null);
+                return Rx.Observable.of(null);
             else
                 return Rx.Observable.ajax.get('https://api.github.com/search/users?q=' + query)
                     .map(r => r.response.items);
@@ -162,7 +162,7 @@ class SearchExample extends React.Component {
         const query$ = this.props$.map(props => props.query);
         const result$ = query$.switchMap(query => {
             if (query === '')
-                return Rx.Observable.just(null);
+                return Rx.Observable.of(null);
             else
                 return Rx.Observable.ajax.get('https://api.github.com/search/users?q=' + query)
                     .map(r => r.response.items)
