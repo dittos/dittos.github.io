@@ -89,7 +89,7 @@ class TasksControllerTest(TestCase):
 
         # 응답 검증
         assert response.statusCode == 200
-        assert response.json() == {'data': [task2, task1]}
+        assert response.json() == [task2, task1]
 
         # 쓰기가 발생하는 API가 아니므로 호출 이후의 상태를 따로 검증하지는 않습니다.
 ```
@@ -100,7 +100,7 @@ class TasksControllerTest(TestCase):
     def testGet__empty(self):
         response = self.client.get('/tasks')
         assert response.statusCode == 200
-        assert response.json() == {'data': []}
+        assert response.json() == []
 ```
 
 
@@ -124,7 +124,7 @@ class TasksControllerTest(TestCase):
         doingTask = self._newTask(completed=False)
         response = self.client.get('/tasks', {'excludeCompleted': True})
         assert response.statusCode == 200
-        assert response.json() == {'data': [doingTask]}
+        assert response.json() == [doingTask]
 ```
 
 
