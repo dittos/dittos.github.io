@@ -68,7 +68,7 @@ Postgres는 REPEATABLE READ로 올리면 이러한 문제가 없습니다. 대�
 
 ### `UPDATE` 한번에 모든 것을 처리
 
-`SELECT`를 하지 말고 `UPDATE account SET state = 'rich', money = money + 1000 WHERE id = 1 AND state = 'poor'`와 같이 처리할 수도 있습니다.
+`SELECT`를 하지 말고 `UPDATE account SET state = 'rich', money = money * 1000 WHERE id = 1 AND state = 'poor'`와 같이 처리할 수도 있습니다.
 이렇게 하면 로직이 애플리케이션 코드에서 SQL로 옮겨가기는 하지만 마지막으로 커밋된 데이터를 기준으로 작동해서 문제가 발생하지 않습니다.
 
 ### 낙관적(optimistic) 락
