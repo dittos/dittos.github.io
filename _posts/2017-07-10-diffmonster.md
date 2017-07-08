@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "Diff Monster를 소개합니다."
+description: "Diff Monster는 GitHub 풀 리퀘스트 리뷰를 조금 편하게 해주는 웹 기반 도구입니다."
+image: "public/img/2017-07-diffmonster.png"
 ---
 
 TL;DR: Diff Monster는 GitHub 풀 리퀘스트 리뷰를 조금 편하게 해주는 웹 기반 도구입니다.
