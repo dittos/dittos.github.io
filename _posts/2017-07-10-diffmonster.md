@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Diff Monster를 소개합니다."
+title: "Diff Monster를 소개합니다"
 description: "Diff Monster는 GitHub 풀 리퀘스트 리뷰를 조금 편하게 해주는 웹 기반 도구입니다."
 image: "public/img/2017-07-diffmonster.png"
 ---
@@ -9,7 +9,7 @@ TL;DR: Diff Monster는 GitHub 풀 리퀘스트 리뷰를 조금 편하게 해주
 
 아래 글을 읽기 싫다면 [지금 바로 접속](https://diff.sapzil.org/)해보세요.
 
-<figure style="margin-left: -2rem; margin-right: -2rem">
+<figure style="margin-left: -1.5rem; margin-right: -1.5rem">
 <a href="/public/img/2017-07-diffmonster.png"><img src="/public/img/2017-07-diffmonster.png" alt="스크린샷"></a>
 </figure>
 

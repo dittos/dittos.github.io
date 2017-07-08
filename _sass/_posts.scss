@@ -21,6 +21,8 @@
 .page-title,
 .post-title {
   margin-top: 0;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
 }
 
 // Meta data line below post title
