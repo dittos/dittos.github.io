@@ -17,15 +17,21 @@
   
   <meta property="fb:admins" content="1373062737">
   <meta property="og:site_name" content="{{ site.title }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@needkoolquality">
   {% if page.title == "Home" %}
   <meta property="og:title" content="{{ site.title }} &middot; {{ site.tagline }}">
+  <meta name="twitter:title" content="{{ site.title }} &middot; {{ site.tagline }}">
   {% else %}
   <meta property="og:title" content="{{ page.title }}">
+  <meta name="twitter:title" content="{{ page.title }}">
   {% endif %}
   {% if page.image %}
   <meta property="og:image" content="{{ site.url }}{{ site.baseurl }}/{{ page.image }}">
+  <meta name="twitter:image" content="{{ site.url }}{{ site.baseurl }}/{{ page.image }}">
   {% endif %}
   {% if page.description %}
   <meta property="og:description" content="{{ page.description }}">
+  <meta name="twitter:description" content="{{ page.description }}">
   {% endif %}
 </head>
