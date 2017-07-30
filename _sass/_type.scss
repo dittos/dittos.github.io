@@ -42,6 +42,10 @@ ul, ol, dl {
   margin-top: 0;
   margin-bottom: 1rem;
   padding-left: 2rem;
+
+  ul, ol, dl {
+    margin-bottom: 0;
+  }
 }
 
 dt {
