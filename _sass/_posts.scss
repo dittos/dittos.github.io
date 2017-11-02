@@ -5,7 +5,7 @@
 
 .page,
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 3rem;
 }
 
 // Blog post or page title
@@ -19,14 +19,19 @@
   margin-top: 0;
   letter-spacing: -0.01em;
   word-break: keep-all;
+  text-align: center;
+}
+.posts h1 {
+  font-size: 1.6rem;
 }
 
 // Meta data line below post title
 .post-date {
   display: block;
   margin-top: -.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   color: #9a9a9a;
+  text-align: center;
 }
 
 
