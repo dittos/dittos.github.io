@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Maven의 Transitive Dependency 길들이기"
+description: "NullPointerException만큼 무서운 ClassNotFoundException을 피하는 방법"
 ---
 
 Maven으로 의존성을 관리하다보면 라이브러리 버전이 꼬이는 경우가 종종 있습니다. 그동안은 주먹구구식으로 해결하곤 했는데 한번쯤 확실히 알아둬야겠다고 생각해서 정리해 보았습니다.
