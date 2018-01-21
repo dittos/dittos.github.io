@@ -95,7 +95,7 @@ MyProject에 원하는 버전의 아티팩트를 직접 포함시키면, 이것�
 
 POM에 다음 내용을 추가하면 모든 X가 기존에 설정된 버전을 무시하고 2.0 버전으로 고정됩니다.
 
-```
+```xml
 <dependencyManagement>
     <dependencies>
         <dependency>
