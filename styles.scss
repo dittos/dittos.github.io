@@ -27,3 +27,22 @@
 @import "posts";
 @import "pagination";
 @import "message";
+
+.posts-item {
+  margin-bottom: 3rem;
+}
+.posts-item-title a {
+  color: #303030;
+}
+.posts-item-title {
+  margin-top: 0;
+  letter-spacing: -0.01em;
+  word-break: keep-all;
+  font-size: 1.6rem;
+}
+.posts-item-date {
+  color: #9a9a9a;
+}
+.posts-item-summary {
+  font-size: 0.9rem;
+}

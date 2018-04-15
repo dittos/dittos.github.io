@@ -5,17 +5,16 @@ title: Home
 
 <div class="posts">
   {% for post in paginator.posts %}
-  <article class="post">
-    <h1 class="post-title">
+  <article class="posts-item">
+    <h1 class="posts-item-title">
       <a href="{{ site.baseurl }}{{ post.url }}">
         {{ post.title }}
       </a>
     </h1>
 
-    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
-
-    <p>
-      {{ post.content | newline_to_br | split: '<br />' | first | strip_html | truncatewords:30 }}
+    <p class="posts-item-summary">
+      <time datetime="{{ post.date | date_to_xmlschema }}" class="posts-item-date">{{ post.date | date_to_string }} &middot;</time>
+      {{ post.content | newline_to_br | split: '<br />' | first | strip_html | truncatewords:30 }}<br>
       <a href="{{ site.baseurl }}{{ post.url }}">
         계속 읽기
       </a>
