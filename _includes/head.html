@@ -4,9 +4,9 @@
 
   <title>
     {% if page.title == "Home" %}
-      {{ site.title }} &middot; {{ site.tagline }}
+      {{ site.title }} | {{ site.tagline }}
     {% else %}
-      {{ page.title }} &middot; {{ site.title }}
+      {{ page.title }} | {{ site.title }}
     {% endif %}
   </title>
 
@@ -20,8 +20,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@needkoolquality">
   {% if page.title == "Home" %}
-  <meta property="og:title" content="{{ site.title }} &middot; {{ site.tagline }}">
-  <meta name="twitter:title" content="{{ site.title }} &middot; {{ site.tagline }}">
+  <meta property="og:title" content="{{ site.title }} | {{ site.tagline }}">
+  <meta name="twitter:title" content="{{ site.title }} | {{ site.tagline }}">
   {% else %}
   <meta property="og:title" content="{{ page.title }}">
   <meta name="twitter:title" content="{{ page.title }}">
