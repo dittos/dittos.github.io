@@ -12,6 +12,10 @@
 
 .all-tags {
   margin-bottom: 3rem;
+  
+  a:before {
+    content: "#";
+  }
 }
 
 footer {

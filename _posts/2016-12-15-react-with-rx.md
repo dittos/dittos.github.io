@@ -1,6 +1,7 @@
 ---
 layout: post
 title: RxJS로 React 컴포넌트 상태 관리하기
+tags: rxjs react javascript web reactive
 ---
 
 최근 UI 프로그래밍에 Rx 패턴이 많이 쓰이고 있습니다. React는 Rx와 이름은 비슷하지만 상태를 다루는 방식은 명령형에 가깝습니다. [상태를 최소화하고 최대한 바깥으로 밀어내는 식](https://facebook.github.io/react/docs/lifting-state-up.html)으로 문제를 회피할 수는 있지만, 실제 애플리케이션에서는 어찌되었든 상태를 직접 다뤄야 하는 상황이 오곤 합니다.

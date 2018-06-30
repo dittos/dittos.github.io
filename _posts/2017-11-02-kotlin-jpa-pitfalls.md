@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Kotlin에서 JPA 사용할 때 주의할 점"
+tags: database jpa kotlin java spring backend
 ---
 
 Kotlin에서 JPA를 사용해봅시다! Java에서 쓸 때와 별로 다를 것은 없습니다. 하지만 엔티티 클래스를 [데이터 클래스](http://kotlinlang.org/docs/reference/data-classes.html)로 선언하였을 때 런타임 프록시 객체를 사용하는 Hibernate/JPA의 기능들이 잘 작동하지 않을 수 있어 주의가 필요합니다.

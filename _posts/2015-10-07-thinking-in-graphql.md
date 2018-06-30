@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Thinking in GraphQL (번역)"
+tags: graphql relay translation
 ---
 
 *(이 글은 [Relay](https://facebook.github.io/relay/) 문서 중 [Thinking in GraphQL](https://facebook.github.io/relay/docs/thinking-in-graphql.html#content) 장을 번역한 것입니다. [245df1e0 리비전](https://github.com/facebook/relay/blob/245df1e0c111b75a69f838eb3cc924c29003853f/docs/QuickStart-ThinkingInGraphQL.md)을 기준으로 하고 있으며, 저장소의 라이센스를 따라 BSD 라이센스입니다. 원작자의 허락으로 별도로 받지는 않았음을 밝힙니다.)*

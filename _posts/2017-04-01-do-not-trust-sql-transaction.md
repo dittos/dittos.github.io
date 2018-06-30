@@ -1,6 +1,7 @@
 ---
 layout: post
 title: SQL 트랜잭션 - 믿는 도끼에 발등 찍힌다
+tags: database
 ---
 
 RDBMS를 쓰는 이유 중 하나는 트랜잭션입니다. 하지만 RDBMS의 트랜잭션을 너무 믿다가는 깜짝 놀랄 일이 벌어질 수도 있습니다.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: jQuery to React
+tags: jquery react javascript web
 ---
 
 *업데이트: React 0.13에 맞춰 수정했습니다. (2015년 5월 14일)*

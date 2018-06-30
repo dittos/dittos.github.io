@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "React 소스 코드 읽기 - 모듈 시스템"
+tags: react javascript web
 ---
 
 {% include toc-react-internals.md %}

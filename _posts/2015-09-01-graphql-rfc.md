@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "GraphQL 살펴보기"
+tags: graphql
 ---
 
 ## Status Quo

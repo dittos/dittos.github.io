@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "GraphQL과 Relay: 웹 애플리케이션 개발의 미래"
+tags: graphql relay javascript web
 ---
 
 Facebook은 React.js Conf 2015에서 [Relay와 GraphQL](https://facebook.github.io/react/blog/2015/02/20/introducing-relay-and-graphql.html)이라는 두 가지 기술을 공개했습니다. (같은 날 발표된 React Native 때문에 약간 묻힌 것도 같지만...) 아직 공개된 코드는 없는데, 올해 안에 오픈소스로 릴리즈 예정이라고 합니다.

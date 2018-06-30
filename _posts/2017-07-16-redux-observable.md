@@ -2,6 +2,7 @@
 layout: post
 title: "redux-observable 사용하기"
 image: "public/img/2017-07-redux-observable.png"
+tags: redux react javascript rxjs reactive web
 ---
 
 [redux-observable](https://redux-observable.js.org/)은 RxJS로 Redux에서 비동기 액션을 처리할 수 있게 해줍니다.
