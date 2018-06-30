@@ -33,10 +33,9 @@ github:
   repo:              https://github.com/poole/poole
 date_format: "%Y년 %m월 %d일"
 
-# Gems
-gems:
-  - jekyll-paginate
-  - jekyll-gist
-
 # Error: No repo name found. Specify using PAGES_REPO_NWO environment variables, 'repository' in your configuration, or set up an 'origin' git remote pointing to your github.com repository.
 repository: "dittos/dittos.github.io"
+
+# Jekyll-Tagging
+tag_page_layout: tag
+tag_page_dir: tags

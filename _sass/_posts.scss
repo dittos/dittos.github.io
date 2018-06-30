@@ -3,9 +3,11 @@
 // Each post is wrapped in `.post` and is used on default and post layouts. Each
 // page is wrapped in `.page` and is only used on the page layout.
 
-.page,
-.post {
+.page {
   margin-bottom: 3rem;
+}
+.post {
+  margin-bottom: 2rem;
 }
 
 // Blog post or page title
@@ -34,6 +36,12 @@
   text-align: center;
 }
 
+// Tags
+.post-tags {
+  text-align: right;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
 
 // Related posts
 .related {

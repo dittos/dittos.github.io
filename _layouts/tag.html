@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<article class="post">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-date">{{ page.posts.size }}</div>
+</article>
+
+<div class="posts">
+{% for post in page.posts %}
+    <article class="posts-item">
+        <h1 class="posts-item-title">
+        <a href="{{ site.baseurl }}{{ post.url }}">
+            {{ post.title }}
+        </a>
+        </h1>
+
+        <p class="posts-item-summary">
+        <time datetime="{{ post.date | date_to_xmlschema }}" class="posts-item-date">
+            {{ post.date | date: site.date_format }} |
+        </time>
+        {{ post.content | newline_to_br | split: '<br />' | first | strip_html | truncatewords:30 }}
+        <a href="{{ site.baseurl }}{{ post.url }}">
+            계속 읽기
+        </a>
+        </p>
+    </article>
+{% endfor %}
+</div>
+
+<div id="tag-cloud">
+  {{ site | tag_cloud }}
+</div>

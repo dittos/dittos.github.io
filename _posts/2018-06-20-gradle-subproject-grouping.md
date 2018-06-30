@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Gradle에서 서브 프로젝트를 한 디렉토리에 몰아넣기"
+tags: gradle build-tools
 ---
 
 한 문장으로 요약이 잘 안돼서 제목이 이상한데, 읽어보시면 뭔지 알 수 있습니다.
