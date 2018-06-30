@@ -3,7 +3,7 @@ layout: default
 ---
 
 <article class="post">
-    <h1 class="post-title">{{ page.tag }}</h1>
+    <h1 class="post-title">#{{ page.tag }}</h1>
     <div class="post-date">글 {{ page.posts.size }}개</div>
 </article>
 
@@ -27,8 +27,4 @@ layout: default
         </p>
     </article>
 {% endfor %}
-</div>
-
-<div id="tag-cloud">
-  {{ site | tag_cloud }}
 </div>
