@@ -37,3 +37,6 @@ date_format: "%Y년 %m월 %d일"
 gems:
   - jekyll-paginate
   - jekyll-gist
+
+# Error: No repo name found. Specify using PAGES_REPO_NWO environment variables, 'repository' in your configuration, or set up an 'origin' git remote pointing to your github.com repository.
+repository: "dittos/dittos.github.io"
