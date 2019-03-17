@@ -18,15 +18,15 @@ Facebook은 React.js Conf 2015에서 [Relay와 GraphQL](https://facebook.github.
 ```py
 # views.py
 def list_post(request):
-	posts = Post.objects.order_by('-id')
-	return render_template('list.html', posts=posts)
+  posts = Post.objects.order_by('-id')
+  return render_template('list.html', posts=posts)
 ```
 
 ```django
 {% raw %}
 {# list.html #}
 {% for post in posts %}
-	{{ post.title }} by {{ post.user.name }}
+  {{ post.title }} by {{ post.user.name }}
 {% endfor %}
 {% endraw %}
 ```
@@ -36,9 +36,9 @@ def list_post(request):
 ```py
 # views.py
 def list_post(request):
-	posts = Post.objects.order_by('-id') \
-		.select_related('user') # 추가!
-	return render_template('list.html', posts=posts)
+  posts = Post.objects.order_by('-id') \
+    .select_related('user') # 추가!
+  return render_template('list.html', posts=posts)
 ```
 
 이제 한번의 쿼리만으로 글 목록과 사용자 정보를 가져올 수 있게 되었네요! 그런데 잘 생각해보면 미묘한 문제점이 몇 가지 있습니다.
@@ -107,11 +107,11 @@ def list_post(request):
 아까 글 목록 예제에서 나왔던 템플릿을 재사용할 수 있고 관리하기 편하도록 여러 개의 '컴포넌트'로 분리한다고 생각해봅시다. 다음과 같은 계층 구조를 만들어볼 수 있습니다.
 
 * PostList
-	* PostItem
-		* UserInfo
-	* PostItem
-		* UserInfo
-	* ...
+  * PostItem
+    * UserInfo
+  * PostItem
+    * UserInfo
+  * ...
 
 `UserInfo`는 작성자의 이름을, `PostItem`에서는 글 제목을 보여준다고 합시다. 이때 `PostItem`에서는 `UserInfo`에 작성자 이름을 넘겨줘야 하므로 `PostList`에서 글 목록을 가져올 때 작성자의 이름도 가져와야 합니다.
 

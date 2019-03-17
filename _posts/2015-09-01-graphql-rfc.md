@@ -29,8 +29,8 @@ GraphQL은 클라이언트 애플리케이션에서 어떤 데이터가 필요�
 GraphQL은 *스키마가 미리 정의되어 있는 강타입 언어입니다.* 타입은 정적 분석으로 실수를 줄이는데도 도움을 주지만, 무엇보다 그 자체로 문서의 역할도 하므로 개발자 사이의 커뮤니케이션에도 도움이 됩니다. 또한 introspection을 통해 스키마 정보를 GraphQL로 쿼리할 수 있고, 이를 이용해 툴을 만들 수 있습니다.
 
 <figure>
-	<img src="https://raw.githubusercontent.com/graphql/graphiql/master/resources/graphiql.png" alt="GraphiQL">
-	<figcaption><a href="https://github.com/graphql/graphiql">GraphiQL</a> &mdash; Introspection을 사용하는 GraphQL IDE</figcaption>
+    <img src="https://raw.githubusercontent.com/graphql/graphiql/master/resources/graphiql.png" alt="GraphiQL">
+    <figcaption><a href="https://github.com/graphql/graphiql">GraphiQL</a> &mdash; Introspection을 사용하는 GraphQL IDE</figcaption>
 </figure>
 
 
@@ -40,8 +40,8 @@ GraphQL은 *스키마가 미리 정의되어 있는 강타입 언어입니다.* 
 
 ```
 {
-	id
-	text
+    id
+    text
 }
 ```
 
@@ -49,8 +49,8 @@ GraphQL은 *스키마가 미리 정의되어 있는 강타입 언어입니다.* 
 
 ```javascript
 {
-	"id": 42,
-	"text": "Hello, world!"
+    "id": 42,
+    "text": "Hello, world!"
 }
 ```
 
@@ -60,7 +60,7 @@ GraphQL은 *스키마가 미리 정의되어 있는 강타입 언어입니다.* 
 
 ```
 {
-	pictureURL(width: 50, height: 50)
+    pictureURL(width: 50, height: 50)
 }
 ```
 
@@ -70,9 +70,9 @@ GraphQL은 *스키마가 미리 정의되어 있는 강타입 언어입니다.* 
 
 ```
 {
-	fullName: name
-	smallPic: profilePic(size: 64)
-	bigPic: profilePic(size: 1024)
+    fullName: name
+    smallPic: profilePic(size: 64)
+    bigPic: profilePic(size: 1024)
 }
 ```
 
@@ -82,16 +82,16 @@ GraphQL은 *스키마가 미리 정의되어 있는 강타입 언어입니다.* 
 
 ```
 {
-	id
-	text
-	author {
-		name
-		pictureURL(width: 50, height: 50)
-		posts {
-			id
-			text
-		}
-	}
+    id
+    text
+    author {
+        name
+        pictureURL(width: 50, height: 50)
+        posts {
+            id
+            text
+        }
+    }
 }
 ```
 
@@ -110,15 +110,15 @@ GraphQL 쿼리의 가장 바깥 실렉션 세트는 '쿼리 루트' 객체로부
 
 ```
 {
-	# 나는 누구인가?
-	me {
-		name
-	}
+    # 나는 누구인가?
+    me {
+        name
+    }
 
-	# id=42인 글 찾기
-	post(id: "42") {
-		title
-	}
+    # id=42인 글 찾기
+    post(id: "42") {
+        title
+    }
 }
 ```
 
@@ -130,20 +130,20 @@ GraphQL 쿼리의 가장 바깥 실렉션 세트는 '쿼리 루트' 객체로부
 ```
 # GraphQL 문서에 쿼리 하나만 있는 경우가 아니면 명시적으로 쿼리임을 나타내야 합니다.
 query sampleQuery {
-	post(id: "4") {
-		id
-		text
-		author { ...basicUserInfo }
-	}
-	users {
-		...basicUserInfo
-	}
+    post(id: "4") {
+        id
+        text
+        author { ...basicUserInfo }
+    }
+    users {
+        ...basicUserInfo
+    }
 }
 
 # User 타입에 대한 프래그먼트임을 명시했습니다.
 fragment basicUserInfo on User {
-	name
-	pictureURL(width: 50, height: 50)
+    name
+    pictureURL(width: 50, height: 50)
 }
 ```
 
@@ -153,17 +153,17 @@ GraphQL은 다형성을 지원합니다. 인터페이스로 공통 필드를 정
 
 ```
 query samplePolymorphicQuery {
-	timeline {
-		data { # data는 Post 또는 User의 리스트
-			# 인라인 프래그먼트, Post 타입일 때
-			... on Post {
-				title
-			}
+    timeline {
+        data { # data는 Post 또는 User의 리스트
+            # 인라인 프래그먼트, Post 타입일 때
+            ... on Post {
+                title
+            }
 
-			# 프래그먼트 참조. User 타입일 때
-			...basicUserInfo
-		}
-	}
+            # 프래그먼트 참조. User 타입일 때
+            ...basicUserInfo
+        }
+    }
 }
 ```
 
@@ -173,9 +173,9 @@ GraphQL은 데이터의 읽기 외에 쓰기(변형)도 지원합니다. 쿼리�
 
 ```
 mutation sampleMutation {
-	setName(name: "Zuck") {
-		newName
-	}
+    setName(name: "Zuck") {
+        newName
+    }
 }
 ```
 
@@ -189,19 +189,19 @@ mutation sampleMutation {
 
 ```
 {
-	comments(first: 5) { # CommentConnection
-		edges { # CommentEdge
-			cursor
-			node { # Comment
-				author { name }
-				text
-			}
-		}
-		pageInfo {
-			hasNextPage
-			hasPreviousPage
-		}
-	}
+    comments(first: 5) { # CommentConnection
+        edges { # CommentEdge
+            cursor
+            node { # Comment
+                author { name }
+                text
+            }
+        }
+        pageInfo {
+            hasNextPage
+            hasPreviousPage
+        }
+    }
 }
 ```
 
