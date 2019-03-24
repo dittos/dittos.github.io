@@ -237,6 +237,8 @@ bob
 
 ## 연관 객체의 ID에 쿼리 없이 접근
 
+**아래 내용은 이제 사실이 아닙니다. [Hibernate 5.2.13/5.3](https://hibernate.atlassian.net/browse/HHH-12096)에서 문제가 수정되어 필드 접근 모드에서도 ID 접근시 엔티티가 로드되지 않습니다. 읽을 때 참고 바랍니다.**
+
 `post.user.id`는 사실 `User`를 쿼리해보지 않아도 `post.user_id` 컬럼으로 알아낼 수 있습니다. 알고보면 Hibernate에서 원래 지원하는 기능입니다. 하지만 위의 예제 코드에서는 작동하지 않았죠. 왜일까요?
 
 데이터 클래스의 필드에 어노테이션을 달면, getter 메소드가 아니라 JVM 필드에 어노테이션이 달립니다. 그러면 프로퍼티 접근 모드가 아니라 [필드 접근 모드](http://blog.xebia.com/jpa-implementation-patterns-field-access-vs-property-access/)가 되고, 이 경우 [Hibernate는 지연 로딩을 지원하지 않습니다.](https://hibernate.atlassian.net/browse/HHH-3718)
