@@ -2,6 +2,7 @@
 layout: post
 title: "나도 MSA 한번 해보자 (1)"
 tags: microservice architecture distributed
+image: "public/img/2019-12-msa.jpg"
 ---
 
 마이크로서비스 아키텍처에 대한 이야기는 최소 5년 전부터 꾸준히 들려왔던 걸로 기억한다. 하지만 회사에서 하던 프로젝트가 (MSA라고 하기는 조금 뭐하지만 어쨌든) 여러 서비스의 조합으로 구성되어 있었는데, 나쁜 경험을 많이 해서 막연한 거부감이 있었다. 그래서 서비스를 어떻게 잘 나누는 것이 좋은지 가끔 생각해보긴 했어도 '웬만하면 모노리스가 낫지'라는 마음가짐으로 살아왔다. (DHH가 작성한 [The Majestic Monolith](https://m.signalvnoise.com/the-majestic-monolith/)라는 글의 영향도 어느 정도 있었다.)
