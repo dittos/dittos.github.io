@@ -129,7 +129,7 @@ def list_post(request):
 [Facebook Groups](https://itunes.apple.com/kr/app/facebook-groups/id931735837?mt=8) iOS 앱에서 Relay를 사용하고 있다고 합니다. (React Native 앱이기도 합니다)
 
 <figure>
-<img src="http://facebook.github.io/react/img/blog/relay-components/relay-architecture.png" alt="Relay Architecture">
+<img src="https://reactjs.org/static/relay-architecture-1c7e934642028c84d5af545a945394ef-de0cd.png" alt="Relay Architecture">
 <figcaption>Relay 아키텍쳐 <a href="https://facebook.github.io/react/blog/2015/03/19/building-the-facebook-news-feed-with-relay.html#the-relay-architecture">(출처)</a></figcaption>
 </figure>
 
