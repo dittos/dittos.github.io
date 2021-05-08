@@ -13,40 +13,7 @@ $blue: #00f;
 // $blue: #6a9fb5;
 $brown: #8f5536;
 
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700&display=swap');
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("https://rsms.me/inter/font-files/Inter-Regular.woff2?v=3.3") format("woff2"),
-       url("https://rsms.me/inter/font-files/Inter-Regular.woff?v=3.3") format("woff");
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("https://rsms.me/inter/font-files/Inter-Italic.woff2?v=3.3") format("woff2"),
-       url("https://rsms.me/inter/font-files/Inter-Italic.woff?v=3.3") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter';
-  font-style:  normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("https://rsms.me/inter/font-files/Inter-Bold.woff2?v=3.3") format("woff2"),
-       url("https://rsms.me/inter/font-files/Inter-Bold.woff?v=3.3") format("woff");
-}
-@font-face {
-  font-family: 'Inter';
-  font-style:  italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url("https://rsms.me/inter/font-files/Inter-BoldItalic.woff2?v=3.3") format("woff2"),
-       url("https://rsms.me/inter/font-files/Inter-BoldItalic.woff?v=3.3") format("woff");
-}
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,700|Inter:400,700&display=swap');
 
 $root-font-family: Inter, 'Noto Sans KR', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, Helvetica, sans-serif;
 $root-font-size: 16px;
