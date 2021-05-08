@@ -14,7 +14,7 @@
 .page-title,
 .post-title,
 .post-title a {
-  color: #303030;
+  text-decoration: none;
 }
 .page-title,
 .post-title {
@@ -66,12 +66,15 @@
       color: #999;
     }
 
-    a:hover {
-      color: #268bd2;
+    a {
       text-decoration: none;
+    }
+
+    a:hover {
+      color: $link-color;
 
       small {
-        color: inherit;
+        color: #999;
       }
     }
   }

@@ -33,6 +33,7 @@
 }
 .posts-item-title a {
   color: #303030;
+  text-decoration: none;
 }
 .posts-item-title {
   margin-top: 0;
@@ -42,7 +43,14 @@
 }
 .posts-item-date {
   color: #9a9a9a;
+  font-weight: normal;
+  margin-right: 0.5rem;
 }
 .posts-item-summary {
-  font-size: 0.9rem;
+  font-weight: lighter;
+
+  a {
+    color: #00f;
+    text-decoration: none;
+  }
 }

@@ -14,7 +14,7 @@ title: Home
 
     <p class="posts-item-summary">
       <time datetime="{{ post.date | date_to_xmlschema }}" class="posts-item-date">
-        {{ post.date | date: site.date_format }} |
+        {{ post.date | date: site.date_format }}
       </time>
       {{ post.content | newline_to_br | split: '<br />' | first | strip_html | truncatewords:30 }}
       <a href="{{ site.baseurl }}{{ post.url }}">
